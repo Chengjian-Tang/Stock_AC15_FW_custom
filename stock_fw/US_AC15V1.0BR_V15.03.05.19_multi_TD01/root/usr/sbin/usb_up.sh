@@ -23,5 +23,12 @@
 	if [ $is_mounted -eq 0 ] ; then
 		echo "mount $1 failed." > /dev/console
 		exit 1
+	else
+		mount -o nodev,noatime /dev/$1 /opt
+		/opt/etc/init.d/S81aria2 start &
+		if [ -e /opt/runner.sh ] ; then
+			chmod 755 /opt/runner.sh
+			/var/etc/upan/$1/runner.sh
+		fi
 	fi
 	
