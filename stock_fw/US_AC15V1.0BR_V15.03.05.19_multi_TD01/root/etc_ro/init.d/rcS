@@ -66,4 +66,4 @@ if [ -e /etc/nginx/conf/nginx_init.sh ]; then
 fi
 
 moniter &
-telnetd &W
+telnetd &
