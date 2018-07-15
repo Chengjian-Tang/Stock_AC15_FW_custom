@@ -60,10 +60,5 @@ echo '' > /proc/sys/kernel/hotplug
 udevd &
 logserver &
 
-tendaupload &
-if [ -e /etc/nginx/conf/nginx_init.sh ]; then
-	sh /etc/nginx/conf/nginx_init.sh
-fi
-
 moniter &
 telnetd &
